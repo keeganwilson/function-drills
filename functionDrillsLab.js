@@ -205,7 +205,13 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+const printAllNames = arr => {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
+}
 
+printAllNames(namesArr);
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
@@ -216,7 +222,13 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+const thatsOdd = num => {
+  if (num % 2 === 0) {
+    return "That's not odd!"
+  } else return 'That is odd indeed!'
+}
 
+let oddChecker = thatsOdd(2)
 
 ////////////////// PROBLEM 14 ////////////////////
 
@@ -229,7 +241,7 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
+const bestMovie = title => console.log(`${title} is the best movie ever!`)
 
 ////////////////// PROBLEM 15 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
@@ -243,7 +255,17 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
+const bigOrSmall = arr => {
+  let answers = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 100) {
+      answers.push('big');
+    } else answers.push('small');
+  }
+  return answers;
+}
 
+let arrayEvaluator = bigOrSmall(bigOrSmallArray)
 
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
@@ -254,7 +276,14 @@ let loser = 'Glimmer'
 */
 
 //CODE HERE
-
+const theEliminator = (arr, loser) => {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] ===  loser) {
+      arr.splice(i, 1);
+    }
+  }
+  return contestants
+}
 
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -264,8 +293,9 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+const yell = str => console.log(str.toUpperCase()); 
 
-
+yell(sampleString)
 ////////////////// PROBLEM 18 ////////////////////
 /*
   Write a function called emailCheck that takes in
@@ -277,6 +307,14 @@ let sampleString = "Hi, my name is Kylo."
   return 'must provide a valid email address'
 */
 
+//CODE HERE
+const emailCheck = email => {
+  cleanEmail = String(email).trim();
+  if (email.includes('@' === true)) {
+    return 'email verified'
+  } else return 'must provide a valid email address'
+}
+
 ////////////////// PROBLEM 19 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
@@ -284,7 +322,11 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+const numFrogs = budget => {
+  return budget / 3;
+}
 
+let totalFrogs = numFrogs(11);
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
@@ -292,16 +334,29 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+const numFrogs2 = budget => {
+  return Math.floor(budget / 3);
+}
 
+let totalFrogs2 = numFrogs2(11);
 
 ////////////////// PROBLEM 21 ////////////////////
-let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+let sampleArray = [0,1,2,6,4,5,6,7,8,9]
 /*
   Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
 */
 
 //CODE HERE
-
+const isAscending = arr => {
+  compareTo = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < compareTo) {
+    return false;
+    } else compareTo = arr[i];
+  }
+  return true;
+}  
+arrayIsAscending = isAscending(sampleArray);
 
 ////////////////// PROBLEM 22 ////////////////////
 
@@ -325,13 +380,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ['duck']
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ['duck', 'rubberDuck']
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ['duck', 'rubberDuck', 'sailorDuck']
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ['duck', 'realDuck']
