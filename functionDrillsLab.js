@@ -12,9 +12,7 @@
 */
 
 //CODE HERE
-const helloWorld = () => {
-  console.log('Hello, world!');
-}
+const helloWorld = () => console.log('Hello, world!');
 
 helloWorld();
 
@@ -28,7 +26,7 @@ helloWorld();
 const jsNinja = () => {
   return 'I am a JavaScript ninja!'
 }
-
+console.log(jsNinja())
 ////////////////// PROBLEM 3 ////////////////////
 /*
   Create a function called printName which takes in a person's name and console logs it.
@@ -170,7 +168,7 @@ const nameCheck = name => {
   } else return `Cool name, ${name}`
 }
 
-let nameGreeting = nameCheck('Steven')
+let nameGreeting = console.log(nameCheck('Steven'));
 
 ////////////////// PROBLEM 11 ////////////////////
 /*
